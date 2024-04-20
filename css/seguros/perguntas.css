@@ -32,13 +32,13 @@
   background-color: var(--cor-p1);
 }
 
-.perguntas dt::after {
+.perguntas dl div dt::after {
   content: "";
   display: inline-block;
   width: 14px;
   height: 6px;
   background-image: url(../../img/icones/seta-abrir.svg);
-  transition: 0.3s;
+  transition: transform 0.3s; /* Adicione a transição para suavizar a animação */
 }
 
 .perguntas dt:hover::after {
@@ -49,6 +49,16 @@
   padding-top: 16px;
   padding-left: 20px;
   max-width: 80ch;
+}
+
+/* Ocultar todas as respostas por padrão */
+.perguntas dl div dd {
+  display: none;
+}
+
+.perguntas dl div.expandido dd {
+  display: block;
+  margin-top: 5px; /* Adicione um espaçamento entre a pergunta e a resposta */
 }
 
 @media (max-width: 800px) {
